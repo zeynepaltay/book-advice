@@ -52,7 +52,7 @@ export default function Home() {
     */
     setResult([]);
     setIsLoading(true);
-    const prompt = `${selectedCategories.toString()} içeren ${languages.toString()} dilinde 5 kitap önerebilir misin? sadece liste ver yorum ekleme dile göre ayrım yapma.`;
+    const prompt = `${selectedCategories.toString()} bunların hepsini içeren ${languages.toString()} dilinde 5 kitap önerebilir misin? sadece liste ver yorum ekleme dile göre ayrım yapma.`;
     const response = await sendPrompt(prompt);
     const parsedResult = response.split("\n");
     setResult(parsedResult);
@@ -62,7 +62,7 @@ export default function Home() {
 
 
   return (
-    <main className="bg-black h-screen p-4 sm:pt-12 md:pt-16 lg:pt-20">
+    <main className="flex-col min-h-screen items-center justify-center bg-black  p-4 sm:pt-12 md:pt-16 lg:pt-20">
       <GradientShadowBox>
         <div className="p-2 md:p-6">
           <h2 className="text-2xl text-light font-bold mb-4 bg-gradient-to-b from-gray-200 via-gray-400 to-gray-600 bg-clip-text text-transparent">
@@ -117,11 +117,11 @@ export default function Home() {
 
             <div className="flex items-center mb-4">
               <input onChange={(e) => handleLanguageSelect(e.target.value, e.target.checked)} id="default-checkbox" type="checkbox" value="türkçe" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-              <label htmlFor="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Türkçe</label>
+              <label htmlFor="default-checkbox" className="ms-2 text-sm font-medium text-white-900 dark:text-white-300">Türkçe</label>
             </div>
             <div className="flex items-center">
               <input onChange={(e) => handleLanguageSelect(e.target.value, e.target.checked)} id="checked-checkbox" type="checkbox" value="ingilizce" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-              <label htmlFor="checked-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">İngilizce</label>
+              <label htmlFor="checked-checkbox" className="ms-2 text-sm font-medium text-white-900 dark:text-white-300">İngilizce</label>
             </div>
           </div>
 
